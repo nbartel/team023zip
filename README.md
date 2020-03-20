@@ -35,3 +35,6 @@ Aktuell wollen wir eine Plattform dafür erstellen. (Webseite)
 ## Technische Anforderungen
 * Responsive Design
 * Barrriere frei zugänglich
+
+## Vertrauen
+* Im Design der Bundesregierung mit emblemen der Organisationen/Behörden von denen die Beiträge sind, die auf der Plattform zusammenarbeiten
