@@ -11,4 +11,5 @@ Aktuell wollen wir eine Plattform dafür erstellen. (Webseite)
 
 ## Funktionen der Plattform
 
+* Landing Page (Vertrauen, wer befüllt die Seite)
 * Dabei kann nach Themen und Regionen gefiltert und abonniert werden.
