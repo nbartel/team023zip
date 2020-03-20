@@ -22,6 +22,8 @@ Aktuell wollen wir eine Plattform dafür erstellen. (Webseite)
 * Katalogisierung / Kategorisierung anhang Tags
 * Beiträge mit Geobezug (OpenStreetMap), Autorennennung, Kategorienennung
 * Autorenseiten
+* Werden auch bekannte Fake News aufgenommen und richtig gestellt (nach denen sucht der Nutzer ja)
+* Suchfunktion? 
 
 ## Technische Anforderungen
 * Responsive Design
