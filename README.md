@@ -24,7 +24,7 @@ Aktuell wollen wir eine Plattform dafür erstellen. (Webseite)
 * Autorenseiten
 * Werden auch bekannte Fake News aufgenommen und richtig gestellt (nach denen sucht der Nutzer ja)
 * Suchfunktion?
-* FakeNews verifizieren (via Link / via Text Suche)
+* FakeNews verifizieren (via Link / via Text Suche / via Foto)
 
 ## Technische Anforderungen
 * Responsive Design
