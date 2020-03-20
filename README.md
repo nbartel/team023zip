@@ -5,6 +5,7 @@ Organisation:
 * Board: https://trello.com/b/rJWanBRE/team023zip
 * Code und Doku: https://github.com/nbartel/team023zip
 * Slack: https://wirvsvirus.slack.com/archives/G01037LKVLJ
+* DevPost: https://devpost.com/software/zentrale-informationsplattform
 
 
 ## Ziel
