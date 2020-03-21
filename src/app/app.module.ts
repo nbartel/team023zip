@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { SearchComponent } from './search/search.component';
 import { MissionComponent } from './mission/mission.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     SearchComponent,
-    MissionComponent
+    MissionComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
