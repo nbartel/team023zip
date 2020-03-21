@@ -40,5 +40,8 @@ export class SearchComponent implements OnInit {
     this.selectedFilters.sort(); // make it sorted
   }
 
+  onKey(event: any): void {
+    alert(event.target.value);
+  }
 
 }
