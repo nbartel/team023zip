@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SourceService } from '../source.service';
 
 @Component({
   selector: 'app-search',
@@ -12,15 +13,25 @@ export class SearchComponent implements OnInit {
 
   articles: string[] = ['1', '2', '3'];
 
-  constructor() { }
+  filtersConfig: string[] = [];
+
+  constructor(private sourceService: SourceService) { }
 
   ngOnInit(): void {
-    this.filters.push('COVID-19');
-    this.filters.push('SCHULAUSFALL');
-    this.filters.push('AUSGANGSSPERRE');
-    this.filters.push('THEMA3');
-    this.filters.push('THEMA4');
-    this.filters.push('THEMA5');
+    this.sourceService.getFilters().subscribe((resp: any) =>
+      {
+          this.filtersConfig = resp['filters'];
+          this.initFilters();
+      }
+    );
+  }
+
+  initFilters() {
+    let me = this;
+    this.filtersConfig.forEach(function (value: string) {
+        me.filters.push(value);
+    });
+
     this.filters = this.filters.filter((item, i, ar) => ar.indexOf(item) === i); //make it unique
     this.filters.sort(); // make it sorted
   }
