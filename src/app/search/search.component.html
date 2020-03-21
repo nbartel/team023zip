@@ -1,13 +1,57 @@
-<div class="pt-3">
-    <div class="jumbotron">
-        <h1 class="display-4">Suche</h1>
-        <p class="lead">Hier kannst du offizielle Informationen durchsuchen und finden.</p>
-        <hr class="my-4">
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Suchbegriff</span>
+<div class="container-fluid pt-3 pb-3">
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <div id="search-selected-filters" class="pb-1 text-right">
+                    <span *ngFor="let selectedFilter of selectedFilters; index as i; first as isFirst">
+                        <span class="badge badge-secondary mr-2 ml-2">
+                            {{selectedFilter}} <span class="badge badge-light"(click)="toggleFilter(selectedFilter)">x</span>
+                        </span>
+                    </span>
+                    <span *ngIf="this.selectedFilters === undefined || this.selectedFilters.length == 0">
+                        <span class="text-secondary small mr-2 ml-2"><i>Es wurde noch kein Filter selektiert.</i></span>
+                    </span>
+                </div>
+                <div id="search-iput" class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Suchbegriff</span>
+                    </div>
+                    <input type="text" class="form-control text-center" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div id="search-filters" class="pt-3 text-center">
+                    <span *ngFor="let filter of filters; index as i; first as isFirst">
+                        <button type="button" class="btn btn-outline-secondary mr-2 ml-2" (click)="toggleFilter(filter)">{{filter}}</button>
+                    </span>
+                </div>
+                <div id="search-explain" class="pt-3 text-center">
+                    <span class="text-secondary small mr-2 ml-2"><i>
+                        Hier soll später mal eine Erklärung stehen, was man alles hier auf der Webseite machen kann. Und vieles mehr...
+                    </i></span>
+                </div>
             </div>
-            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="search-result-header" class="pt-3 text-center">
+                <h1>Neuste Beiträge</h1>
+                <hr class="my-2">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let article of articles; index as i; first as isFirst" class="col">
+            <div class="pt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
