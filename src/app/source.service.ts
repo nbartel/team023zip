@@ -13,4 +13,9 @@ export class SourceService {
   getFilters() {
     return this.http.get(this.filters);
   }
+
+  getArticle(filename: string) {
+    return this.http.get(filename);
+  }
+
 }
