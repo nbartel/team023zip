@@ -32,26 +32,28 @@
                            aria-label="search-field"
                            aria-describedby="inputGroup-sizing-sm"
                            placeholder="Bitte geben Sie hier Ihren Suchbegriff ein..."
-                           (keyup.enter)="onKey($event)">
-                </div>
-                <div id="search-explain" class="pt-3 text-center">
-                    <span class="text-secondary small mr-2 ml-2"><i>
-                        Sie können hier ganz einfach vertrauenswürdige Quellen durchsuchen und filtern.
-                    </i></span>
+                           (keyup)="onKey($event)">
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <div id="search-result-header" class="pt-3 text-center">
-                <h1>Neuste Beiträge</h1>
+            <div id="search-result-header" class="pt-2 text-center">
+                <h2>Neuste Beiträge</h2>
                 <hr class="my-2">
             </div>
         </div>
     </div>
     <div class="row">
-        <div *ngFor="let article of loadedArticles.slice(0, 2); index as i; first as isFirst" class="col">
+        <div *ngIf="previewArticles.length == 0" class="col text-center">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container-fluid">
+                    <h1 class="display-4">Loading...</h1>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let article of previewArticles.slice(0, 2); index as i; first as isFirst" class="col">
             <div class="pt-3">
                 <div class="card">
                     <div class="card-body">

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SourceService } from '../source.service';
 
+import FuzzySearch from 'fuzzy-search';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -13,6 +15,8 @@ export class SearchComponent implements OnInit {
 
   loadedFilters: string[] = [];
   loadedArticles: {}[] = [];
+
+  previewArticles: {}[] = [];
 
   constructor(private sourceService: SourceService) { }
 
@@ -41,7 +45,7 @@ export class SearchComponent implements OnInit {
   }
 
   loadArticles() {
-    this.loadArticle('assets/data/content/EW-SE079-20200318-79-001.json');
+    this.loadArticle('assets/data/content/DE-BB-EW-SE079-20200318-79-001.json');
     this.loadArticle('assets/data/content/DE-BB-EW-SE079-20200318-79-002.json');
     this.loadArticle('assets/data/content/DE-BW-FR-W022-20200310-000.json');
     this.loadArticle('assets/data/content/DE-BW-FR-W022-20200317-000.json');
@@ -96,6 +100,7 @@ export class SearchComponent implements OnInit {
     this.sourceService.getArticle(name).subscribe((resp: any) =>
       {
           this.loadedArticles.push(resp);
+          this.previewArticles.push(resp);
       }
     );
   }
@@ -116,7 +121,13 @@ export class SearchComponent implements OnInit {
   }
 
   onKey(event: any): void {
-    alert(event.target.value);
+    this.previewArticles = [];
+    const searcher = new FuzzySearch(this.loadedArticles, ['headline', 'content'], {
+      caseSensitive: true,
+    });
+    const result = searcher.search(event.target.value);
+
+    setTimeout(() => {  this.previewArticles = result; }, 1000);
   }
 
 }
