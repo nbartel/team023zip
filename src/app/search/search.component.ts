@@ -127,7 +127,8 @@ export class SearchComponent implements OnInit {
     });
     const result = searcher.search(event.target.value);
 
-    setTimeout(() => {  this.previewArticles = result; }, 1000);
+    setTimeout(() => {  this.previewArticles = result; }, 1000); //simulate loading
+
   }
 
 }
